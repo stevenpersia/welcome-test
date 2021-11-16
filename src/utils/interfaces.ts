@@ -9,22 +9,12 @@ export interface IJob {
   office: IOffice;
   profile: string;
   published_at: string;
+  recruitment_process: string;
   reference: string;
   salary: ISalary;
   slug: string;
+  start_date: ILang;
   websites_urls: IWebsiteUrl[];
-}
-
-export interface IWebsiteUrl {
-  url: string;
-  website_reference: string;
-}
-
-export interface IWebsite {
-  kind: string;
-  organization_url: string;
-  reference: string;
-  root_url: string;
 }
 
 export interface ILang {
@@ -50,4 +40,16 @@ export interface ISalary {
   max: number | null;
   currency: string;
   period: string;
+}
+
+export interface IWebsite {
+  kind: string;
+  organization_url: string;
+  reference: string;
+  root_url: string;
+}
+
+export interface IWebsiteUrl {
+  url: string;
+  website_reference: string;
 }
