@@ -7,6 +7,9 @@ const initialState: IStoreState = { name: "", jobs: [], websites: [] };
 const AppStateContext = createContext<IStoreState>(initialState);
 const AppDispatchContext = createContext<Dispatch | undefined>(undefined);
 
+/**
+ * Handle context of global state and dispatches.
+ */
 export const AppProvider = ({ children }: { children: ReactElement }) => {
   const [state, dispatch] = useReducer(storeReducer, initialState);
 
@@ -19,6 +22,11 @@ export const AppProvider = ({ children }: { children: ReactElement }) => {
   );
 };
 
+/**
+ * Returns a global state, and a function to update it.
+ *
+ * @returns `state`, `dispatch`
+ */
 export const useApp = () => {
   const state = useContext(AppStateContext);
   const dispatch = useContext(AppDispatchContext);

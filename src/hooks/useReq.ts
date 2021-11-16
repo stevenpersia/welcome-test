@@ -5,6 +5,11 @@ interface IUseReq {
   url: string;
 }
 
+/**
+ * Custom hook who handle HTTP requests with Fetch API.
+ *
+ * @params { method?, url }
+ */
 const useReq = ({ method = "GET", url }: IUseReq) => {
   const initOpt = { url, method, body: undefined, headers: undefined };
   const [options, setOptions] = useState(initOpt);
