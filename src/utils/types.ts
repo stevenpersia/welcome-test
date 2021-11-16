@@ -1,9 +1,3 @@
-export interface IAppStateContext {
-  jobs: IJob[];
-  name: string;
-  websites: IWebsite[];
-}
-
 export interface IJob {
   id: number;
   cms_sites_references: string[];

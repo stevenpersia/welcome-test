@@ -1,18 +1,18 @@
-import { createContext, ReactElement } from "react";
-import { IAppStateContext } from "../utils/types";
+import { createContext, ReactElement, useReducer } from "react";
+import { IStoreState } from "./store.types";
+import { storeReducer } from "./store.reducer";
 
-const AppStateContext = createContext<IAppStateContext>({
-  name: "",
-  jobs: [],
-  websites: [],
-});
+const initialState: IStoreState = { name: "", jobs: [], websites: [] };
 
+const AppStateContext = createContext<IStoreState>(initialState);
 const AppDispatchContext = createContext({});
 
 export const AppProvider = ({ children }: { children: ReactElement }) => {
+  const [state, dispatch] = useReducer(storeReducer, initialState);
+
   return (
-    <AppStateContext.Provider value={{}}>
-      <AppDispatchContext.Provider value={{}}>
+    <AppStateContext.Provider value={state}>
+      <AppDispatchContext.Provider value={dispatch}>
         {children}
       </AppDispatchContext.Provider>
     </AppStateContext.Provider>
