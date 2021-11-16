@@ -1,4 +1,4 @@
-import { IJob, IWebsite } from "../utils/types";
+import { IJob, IWebsite } from "../utils/interfaces";
 
 export type Dispatch = (action: IStoreAction) => void;
 
