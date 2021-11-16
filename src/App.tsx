@@ -1,6 +1,7 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import useReq from "./hooks/useReq";
 import { useApp } from "./store";
+import { ResultsList } from "./components";
 
 const API_URL =
   "https://www.welcomekit.co/api/v1/embed?organization_reference=Pg4eV6k";
@@ -16,17 +17,8 @@ const App = () => {
   if (status === "LOADING") return <div>Loading...</div>;
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <ResultsList />
     </div>
   );
 };
