@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Box } from "@welcome-ui/box";
 import useReq from "./hooks/useReq";
 import { useApp } from "./store";
 import { ResultsList } from "./components";
@@ -17,9 +18,9 @@ const App = () => {
   if (status === "LOADING") return <div>Loading...</div>;
 
   return (
-    <div>
+    <Box margin="0 auto" maxWidth={720}>
       <ResultsList />
-    </div>
+    </Box>
   );
 };
 
