@@ -1,19 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import { Box } from "@welcome-ui/box";
+import { Modal as WuiModal, useModalState } from "@welcome-ui/modal";
+
 import { useApp } from "../store";
 import JobCard from "./JobCard";
+import Modal from "./Modal";
 import getInitials from "../utils/getInitials";
+import { IJob } from "../utils/interfaces";
 
 const ResultsList = () => {
+  const [selectedJob, setSelectedJob] = useState<IJob>();
   const { state } = useApp();
+  const modal = useModalState();
   const initialName = getInitials(state.name);
 
   return (
-    <Box margin="0 auto" maxWidth={720}>
+    <>
       {state.jobs.map((job) => (
-        <JobCard key={job.id} data={job} name={initialName} />
+        <WuiModal.Trigger
+          as={Box}
+          key={job.id}
+          onClick={() => setSelectedJob(job)}
+          {...modal}
+        >
+          <JobCard data={job} name={initialName} />
+        </WuiModal.Trigger>
       ))}
-    </Box>
+
+      <Modal data={selectedJob} modal={modal} />
+    </>
   );
 };
 
