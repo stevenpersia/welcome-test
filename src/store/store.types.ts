@@ -3,7 +3,8 @@ import { IJob, IWebsite } from "../utils/interfaces";
 export type Dispatch = (action: IStoreAction) => void;
 
 export type IStoreAction = {
-  type: "CHANGE_NAME_TEST";
+  type: "GET_ORGA_OFFERS";
+  payload: IStoreState;
 };
 
 export type IStoreState = {

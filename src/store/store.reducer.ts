@@ -2,8 +2,8 @@ import { IStoreAction, IStoreState } from "./store.types";
 
 export const storeReducer = (state: IStoreState, action: IStoreAction) => {
   switch (action.type) {
-    case "CHANGE_NAME_TEST": {
-      return { ...state, name: "Hello world" };
+    case "GET_ORGA_OFFERS": {
+      return { ...state, ...action.payload };
     }
 
     default:
