@@ -2,7 +2,14 @@ import { createContext, ReactElement, useContext, useReducer } from "react";
 import { Dispatch, IStoreState } from "./store.types";
 import { storeReducer } from "./store.reducer";
 
-const initialState: IStoreState = { name: "", jobs: [], websites: [] };
+const initialState: IStoreState = {
+  jobs: [],
+  name: "",
+  searchGroupByAttributes: [],
+  searchResults: { data: [], length: 0 },
+  searchTerms: { text: "", groupBy: "" },
+  websites: [],
+};
 
 const AppStateContext = createContext<IStoreState>(initialState);
 const AppDispatchContext = createContext<Dispatch | undefined>(undefined);
