@@ -80,7 +80,12 @@ const Modal = () => {
           <Button onClick={onClose} variant="secondary">
             Close
           </Button>
-          <Button onClick={() => window.open(applyWebsite?.url, "_blank")}>
+          <Button
+            as="a"
+            href={applyWebsite?.url}
+            target="_blank"
+            rel="noopener nofollow"
+          >
             Apply
           </Button>
         </Box>
