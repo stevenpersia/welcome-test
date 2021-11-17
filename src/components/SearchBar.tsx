@@ -55,10 +55,16 @@ const SearchBar = () => {
             {...as("groupBy")}
           />
 
-          <Button h={42} shape="square" type="submit">
+          <Button disabled={!state.jobs} h={42} shape="square" type="submit">
             <SearchIcon />
           </Button>
-          <Button h={42} shape="square" onClick={onReset} variant="secondary">
+          <Button
+            disabled={!state.jobs}
+            h={42}
+            shape="square"
+            onClick={onReset}
+            variant="secondary"
+          >
             <CrossIcon />
           </Button>
         </Box>
