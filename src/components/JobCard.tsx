@@ -5,18 +5,20 @@ import { OfferStatusIcon, LocationIcon, OfficeIcon } from "@welcome-ui/icons";
 import { Stack } from "@welcome-ui/stack";
 import { Text } from "@welcome-ui/text";
 
-import { IJob } from "../utils/interfaces";
 import { useApp } from "../store";
+import { IJobCard } from "../utils/interfaces";
 import isNewerThanSevenDays from "../utils/isNewerThanSevenDays";
 
-const JobCard = ({ data, name }: { data: IJob; name: string }) => {
+const JobCard = ({ cookie, data, name, updateCookie }: IJobCard) => {
   const [isHovered, setIsHovered] = useState(false);
   const { dispatch } = useApp();
   const isNew = isNewerThanSevenDays(data.published_at);
+  const hasAlreadySeen = cookie.find((el) => el === data.id.toString());
 
   const onOpenJob = async () => {
     await dispatch({ type: "SELECT_JOB", payload: data });
     dispatch({ type: "TOGGLE_MODAL", payload: true });
+    updateCookie(data.id);
   };
 
   return (
@@ -45,12 +47,24 @@ const JobCard = ({ data, name }: { data: IJob; name: string }) => {
         </Text>
       </Box>
 
-      <Box padding="xl">
-        <Box display="flex" alignItems="center" justifyContent="space-between">
-          <Text color="dark.100" my="0" variant="body3">
-            Already seen
-          </Text>
-        </Box>
+      <Box
+        display="flex"
+        justifyContent="center"
+        flexDirection="column"
+        padding="xl"
+      >
+        {hasAlreadySeen && (
+          <Box
+            display="flex"
+            alignItems="center"
+            justifyContent="space-between"
+            mb={4}
+          >
+            <Text color="dark.100" my="0" variant="body3">
+              Already seen
+            </Text>
+          </Box>
+        )}
 
         {isNew && (
           <Badge position="absolute" right={16} top={16} variant="primary">
@@ -58,7 +72,7 @@ const JobCard = ({ data, name }: { data: IJob; name: string }) => {
           </Badge>
         )}
 
-        <Text color="dark.700" lines={1} mb={8} mt={4} variant="h4">
+        <Text color="dark.700" lines={1} mb={8} mt={0} variant="h4">
           {data.name}
         </Text>
 
