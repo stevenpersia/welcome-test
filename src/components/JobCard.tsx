@@ -3,12 +3,19 @@ import { Badge } from "@welcome-ui/badge";
 import { Box } from "@welcome-ui/box";
 import { OfferStatusIcon, LocationIcon, OfficeIcon } from "@welcome-ui/icons";
 import { Stack } from "@welcome-ui/stack";
-
 import { Text } from "@welcome-ui/text";
+
 import { IJob } from "../utils/interfaces";
+import { useApp } from "../store";
 
 const JobCard = ({ data, name }: { data: IJob; name: string }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const { dispatch } = useApp();
+
+  const onOpenJob = async () => {
+    await dispatch({ type: "SELECT_JOB", payload: data });
+    dispatch({ type: "TOGGLE_MODAL", payload: true });
+  };
 
   return (
     <Box
@@ -17,6 +24,7 @@ const JobCard = ({ data, name }: { data: IJob; name: string }) => {
       display="flex"
       my="xl"
       position="relative"
+      onClick={onOpenJob}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onMouseDown={() => setTimeout(() => setIsHovered(false), 300)}
