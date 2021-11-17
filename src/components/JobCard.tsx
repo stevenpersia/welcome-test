@@ -67,7 +67,7 @@ const JobCard = ({ cookie, data, name, updateCookie }: IJobCardProps) => {
         )}
 
         {isNew && (
-          <Badge position="absolute" right={16} top={16} variant="primary">
+          <Badge position="absolute" right={8} top={8} variant="primary">
             New
           </Badge>
         )}
