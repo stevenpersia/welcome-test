@@ -59,6 +59,14 @@ export const storeReducer = (state: IStoreState, action: IStoreAction) => {
       };
     }
 
+    case "SELECT_JOB": {
+      return { ...state, selectedJob: action.payload };
+    }
+
+    case "TOGGLE_MODAL": {
+      return { ...state, isModalVisible: action.payload };
+    }
+
     default:
       throw new Error(
         `Unhandled action type: ${(action as IStoreAction).type}.`

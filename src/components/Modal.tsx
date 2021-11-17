@@ -4,21 +4,28 @@ import { Modal as WuiModal } from "@welcome-ui/modal";
 import { Text } from "@welcome-ui/text";
 
 import { useApp } from "../store";
-import { IJob, IWuiModal } from "../utils/interfaces";
 
-const Modal = ({ data, modal }: { data: IJob; modal: IWuiModal }) => {
-  const { state } = useApp();
+const Modal = () => {
+  const { dispatch, modal, state } = useApp();
+  const job = state.selectedJob;
 
-  const applyWebsite = data?.websites_urls.find(
+  const applyWebsite = job?.websites_urls.find(
     (w) => w.website_reference === "wttj_fr"
   );
 
+  const onClose = async () => {
+    await dispatch({ type: "SELECT_JOB", payload: undefined });
+    dispatch({ type: "TOGGLE_MODAL", payload: false });
+  };
+
   return (
     <WuiModal
-      ariaLabel={`job-${data?.id}`}
+      ariaLabel={`job-${job?.id}`}
       closeElement={() => null}
       style={{ height: "100%" }}
       {...modal}
+      onClose={onClose}
+      visible={state.isModalVisible}
     >
       <WuiModal.Cover h="auto">
         <Box
@@ -35,10 +42,10 @@ const Modal = ({ data, modal }: { data: IJob; modal: IWuiModal }) => {
             {state.name}
           </Text>
           <Text color="light.900" my={8} variant="h3">
-            {data?.name}
+            {job?.name}
           </Text>
           <Text color="light.800" my={0} variant="body3">
-            {data?.contract_type?.en} - {data?.office?.name}
+            {job?.contract_type?.en} - {job?.office?.name}
           </Text>
         </Box>
       </WuiModal.Cover>
@@ -48,14 +55,14 @@ const Modal = ({ data, modal }: { data: IJob; modal: IWuiModal }) => {
           Description
         </Text>
         <Text color="dark.700" my={0} variant="body2">
-          <div dangerouslySetInnerHTML={{ __html: data?.description }} />
+          <div dangerouslySetInnerHTML={{ __html: job?.description || "" }} />
         </Text>
 
         <Text color="dark.700" mt={36} variant="h4">
           Profile
         </Text>
         <Text color="dark.700" my={0} variant="body2">
-          <div dangerouslySetInnerHTML={{ __html: data?.profile }} />
+          <div dangerouslySetInnerHTML={{ __html: job?.profile || "" }} />
         </Text>
 
         <Text color="dark.700" mt={36} variant="h4">
@@ -63,14 +70,14 @@ const Modal = ({ data, modal }: { data: IJob; modal: IWuiModal }) => {
         </Text>
         <Text color="dark.700" my={0} variant="body2">
           <div
-            dangerouslySetInnerHTML={{ __html: data?.recruitment_process }}
+            dangerouslySetInnerHTML={{ __html: job?.recruitment_process || "" }}
           />
         </Text>
       </WuiModal.Content>
 
       <WuiModal.Footer>
         <Box w={1} display="flex" justifyContent="space-between">
-          <Button onClick={modal.hide} variant="secondary">
+          <Button onClick={onClose} variant="secondary">
             Close
           </Button>
           <Button onClick={() => window.open(applyWebsite?.url, "_blank")}>
