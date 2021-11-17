@@ -7,10 +7,12 @@ import { Text } from "@welcome-ui/text";
 
 import { IJob } from "../utils/interfaces";
 import { useApp } from "../store";
+import isNewerThanSevenDays from "../utils/isNewerThanSevenDays";
 
 const JobCard = ({ data, name }: { data: IJob; name: string }) => {
   const [isHovered, setIsHovered] = useState(false);
   const { dispatch } = useApp();
+  const isNew = isNewerThanSevenDays(data.published_at);
 
   const onOpenJob = async () => {
     await dispatch({ type: "SELECT_JOB", payload: data });
@@ -50,9 +52,11 @@ const JobCard = ({ data, name }: { data: IJob; name: string }) => {
           </Text>
         </Box>
 
-        <Badge position="absolute" right={16} top={16} variant="primary">
-          New
-        </Badge>
+        {isNew && (
+          <Badge position="absolute" right={16} top={16} variant="primary">
+            New
+          </Badge>
+        )}
 
         <Text color="dark.700" lines={1} mb={8} mt={4} variant="h4">
           {data.name}
