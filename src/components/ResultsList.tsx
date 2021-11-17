@@ -16,7 +16,9 @@ const ResultsList = () => {
         <JobCard key={job.id} data={job} name={initialName} />
       ))}
 
-      {state.searchResults.length === 0 && <NoResult />}
+      {state.jobs.length > 0 && state.searchResults.length === 0 && (
+        <NoResult />
+      )}
     </Box>
   );
 };
