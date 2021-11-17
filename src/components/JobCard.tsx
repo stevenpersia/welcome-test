@@ -6,10 +6,10 @@ import { Stack } from "@welcome-ui/stack";
 import { Text } from "@welcome-ui/text";
 
 import { useApp } from "../store";
-import { IJobCard } from "../utils/interfaces";
+import { IJobCardProps } from "../utils/interfaces";
 import isNewerThanSevenDays from "../utils/isNewerThanSevenDays";
 
-const JobCard = ({ cookie, data, name, updateCookie }: IJobCard) => {
+const JobCard = ({ cookie, data, name, updateCookie }: IJobCardProps) => {
   const [isHovered, setIsHovered] = useState(false);
   const { dispatch } = useApp();
   const isNew = isNewerThanSevenDays(data.published_at);
