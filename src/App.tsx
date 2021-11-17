@@ -4,6 +4,7 @@ import { Box } from "@welcome-ui/box";
 import useReq from "./hooks/useReq";
 import { useApp } from "./store";
 import {
+  Header,
   Loader,
   Modal,
   ResultsList,
@@ -24,6 +25,7 @@ const App = () => {
 
   return (
     <Box margin="0 auto" maxWidth={720}>
+      <Header />
       <ResultsTag />
       <SearchBar />
       {status === "LOADING" ? <Loader /> : <ResultsList />}

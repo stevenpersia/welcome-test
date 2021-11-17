@@ -1,3 +1,4 @@
+export { default as Header } from "./Header";
 export { default as JobCard } from "./JobCard";
 export { default as Loader } from "./Loader";
 export { default as Modal } from "./Modal";
