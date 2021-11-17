@@ -20,6 +20,7 @@
     "@welcome-ui/loader": "^3.4.3",
     "@welcome-ui/modal": "^3.13.0",
     "@welcome-ui/select": "^3.11.0",
+    "@welcome-ui/shape": "^3.4.3",
     "@welcome-ui/stack": "^3.0.0",
     "@welcome-ui/system": "^3.0.0",
     "@welcome-ui/tag": "^3.11.0",
