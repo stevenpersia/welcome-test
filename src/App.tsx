@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Box } from "@welcome-ui/box";
 import useReq from "./hooks/useReq";
 import { useApp } from "./store";
-import { ResultsList } from "./components";
+import { ResultsList, ResultsTag, SearchBar } from "./components";
 
 const API_URL =
   "https://www.welcomekit.co/api/v1/embed?organization_reference=Pg4eV6k";
@@ -19,6 +19,8 @@ const App = () => {
 
   return (
     <Box margin="0 auto" maxWidth={720}>
+      <ResultsTag />
+      <SearchBar />
       <ResultsList />
     </Box>
   );

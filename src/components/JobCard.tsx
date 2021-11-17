@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Badge } from "@welcome-ui/badge";
 import { Box } from "@welcome-ui/box";
-import { CompassIcon, LocationIcon } from "@welcome-ui/icons";
+import { OfferStatusIcon, LocationIcon, OfficeIcon } from "@welcome-ui/icons";
 import { Stack } from "@welcome-ui/stack";
 
 import { Text } from "@welcome-ui/text";
@@ -30,7 +30,7 @@ const JobCard = ({ data, name }: { data: IJob; name: string }) => {
         h={112}
         w={112}
       >
-        <Text variant="h3" color="light.900">
+        <Text color="light.900" variant="h3">
           {isHovered ? "SEE MORE" : name}
         </Text>
       </Box>
@@ -52,7 +52,7 @@ const JobCard = ({ data, name }: { data: IJob; name: string }) => {
 
         <Stack direction="row" spacing="xl">
           <Box display="flex" alignItems="center">
-            <CompassIcon color="primary.500" title="Type" />
+            <OfferStatusIcon color="primary.500" title="Type" />
             <Text color="dark.200" my={0} variant="body3">
               {data.contract_type.en}
             </Text>
@@ -62,6 +62,13 @@ const JobCard = ({ data, name }: { data: IJob; name: string }) => {
             <LocationIcon color="primary.500" title="Location" />
             <Text color="dark.200" my={0} variant="body3">
               {data.office.name}
+            </Text>
+          </Box>
+
+          <Box display="flex" alignItems="center">
+            <OfficeIcon color="primary.500" title="Location" />
+            <Text color="dark.200" my={0} variant="body3">
+              {data.department.name}
             </Text>
           </Box>
         </Stack>

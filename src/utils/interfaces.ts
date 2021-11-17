@@ -71,3 +71,18 @@ export interface IWuiModal {
   toggle: () => boolean;
   visible: boolean;
 }
+
+export interface ISearchFormValues {
+  text: string;
+  groupBy: string;
+}
+
+export interface ISearchGroupByAttributeGroup {
+  label: string;
+  options: ISearchGroupByAttribute[];
+}
+
+export interface ISearchGroupByAttribute {
+  label: string;
+  value: string;
+}

@@ -5,6 +5,7 @@ import { Modal as WuiModal, useModalState } from "@welcome-ui/modal";
 import { useApp } from "../store";
 import JobCard from "./JobCard";
 import Modal from "./Modal";
+import NoResult from "./NoResult";
 import getInitials from "../utils/getInitials";
 import { IJob } from "../utils/interfaces";
 
@@ -15,8 +16,8 @@ const ResultsList = () => {
   const initialName = getInitials(state.name);
 
   return (
-    <Box mx="xl">
-      {state.jobs.map((job) => (
+    <Box m="xl">
+      {state.searchResults.data.map((job) => (
         <WuiModal.Trigger
           as={Box}
           key={job.id}
@@ -26,6 +27,8 @@ const ResultsList = () => {
           <JobCard data={job} name={initialName} />
         </WuiModal.Trigger>
       ))}
+
+      {state.searchResults.length === 0 && <NoResult />}
 
       {selectedJob && <Modal data={selectedJob} modal={modal} />}
     </Box>
