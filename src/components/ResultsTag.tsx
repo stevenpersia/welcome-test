@@ -8,7 +8,7 @@ const ResultsTag = () => {
   const { state } = useApp();
 
   return (
-    <Box m="xl" textAlign="right">
+    <Box m="xl">
       <Tag>{state.searchResults.length || 0} offer(s)</Tag>
     </Box>
   );

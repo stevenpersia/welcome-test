@@ -1,5 +1,3 @@
-import { Dispatch, SetStateAction } from "react";
-
 export interface IJob {
   id: number;
   cms_sites_references: string[];
@@ -17,6 +15,13 @@ export interface IJob {
   slug: string;
   start_date: ILang;
   websites_urls: IWebsiteUrl[];
+}
+
+export interface IJobCardProps {
+  cookie: string[];
+  data: IJob;
+  name: string;
+  updateCookie: (id: number) => void;
 }
 
 export interface ILang {
@@ -54,22 +59,6 @@ export interface IWebsite {
 export interface IWebsiteUrl {
   url: string;
   website_reference: string;
-}
-
-export interface IWuiModal {
-  animated: boolean;
-  animating: boolean;
-  baseId: string;
-  hide: () => Dispatch<SetStateAction<boolean>>;
-  modal: boolean;
-  setAnimated: () => Dispatch<SetStateAction<any>>;
-  setBaseId: () => Dispatch<SetStateAction<string>>;
-  setModal: () => Dispatch<SetStateAction<IWuiModal>>;
-  setVisible: () => Dispatch<SetStateAction<boolean>>;
-  show: () => Dispatch<SetStateAction<boolean>>;
-  stopAnimation: () => Dispatch<SetStateAction<boolean>>;
-  toggle: () => boolean;
-  visible: boolean;
 }
 
 export interface ISearchFormValues {
