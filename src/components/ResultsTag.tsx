@@ -9,7 +9,7 @@ const ResultsTag = () => {
 
   return (
     <Box m="xl" textAlign="right">
-      <Tag>{state.searchResults.length} offer(s)</Tag>
+      <Tag>{state.searchResults.length || 0} offer(s)</Tag>
     </Box>
   );
 };
