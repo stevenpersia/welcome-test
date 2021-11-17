@@ -1,4 +1,5 @@
 export { default as JobCard } from "./JobCard";
+export { default as Loader } from "./Loader";
 export { default as Modal } from "./Modal";
 export { default as NoResult } from "./NoResult";
 export { default as ResultsList } from "./ResultsList";
