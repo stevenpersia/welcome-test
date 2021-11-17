@@ -4443,6 +4443,15 @@
     "@welcome-ui/utils" "^3.4.3"
     "@welcome-ui/variant-icon" "^3.4.3"
 
+"@welcome-ui/loader@^3.4.3":
+  version "3.4.3"
+  resolved "https://registry.yarnpkg.com/@welcome-ui/loader/-/loader-3.4.3.tgz#37e0d0d251bf438001847171882e03fb183d663e"
+  integrity sha512-juIudF1kNfkkitxWygbLcwXwFQwX+/NY+ymweoaP+kuPAUd9fBytziwjdjfDgWkZKDzGTvD2SF6cScTs3lV+0Q==
+  dependencies:
+    "@welcome-ui/box" "^3.0.0"
+    "@welcome-ui/shape" "^3.4.3"
+    "@welcome-ui/system" "^3.0.0"
+
 "@welcome-ui/modal@^3.13.0":
   version "3.13.0"
   resolved "https://registry.yarnpkg.com/@welcome-ui/modal/-/modal-3.13.0.tgz#f18adfcec59fd44cda84f76fc99f8b9a16170537"

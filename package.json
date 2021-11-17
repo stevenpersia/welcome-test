@@ -17,6 +17,7 @@
     "@welcome-ui/emoji": "^3.6.0",
     "@welcome-ui/icons": "^3.13.1",
     "@welcome-ui/input-text": "^3.11.0",
+    "@welcome-ui/loader": "^3.4.3",
     "@welcome-ui/modal": "^3.13.0",
     "@welcome-ui/select": "^3.11.0",
     "@welcome-ui/stack": "^3.0.0",
