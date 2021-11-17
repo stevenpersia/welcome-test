@@ -1,8 +1,9 @@
 import { useEffect } from "react";
 import { Box } from "@welcome-ui/box";
+
 import useReq from "./hooks/useReq";
 import { useApp } from "./store";
-import { ResultsList, ResultsTag, SearchBar } from "./components";
+import { Modal, ResultsList, ResultsTag, SearchBar } from "./components";
 
 const API_URL =
   "https://www.welcomekit.co/api/v1/embed?organization_reference=Pg4eV6k";
@@ -22,6 +23,7 @@ const App = () => {
       <ResultsTag />
       <SearchBar />
       <ResultsList />
+      <Modal />
     </Box>
   );
 };
