@@ -15,7 +15,7 @@ const ResultsList = () => {
   const initialName = getInitials(state.name);
 
   return (
-    <>
+    <Box mx="xl">
       {state.jobs.map((job) => (
         <WuiModal.Trigger
           as={Box}
@@ -27,8 +27,8 @@ const ResultsList = () => {
         </WuiModal.Trigger>
       ))}
 
-      <Modal data={selectedJob} modal={modal} />
-    </>
+      {selectedJob && <Modal data={selectedJob} modal={modal} />}
+    </Box>
   );
 };
 
