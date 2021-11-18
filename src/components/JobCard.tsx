@@ -23,6 +23,7 @@ const JobCard = ({ cookie, data, name, updateCookie }: IJobCardProps) => {
 
   return (
     <Box
+      data-cy="job-card"
       backgroundColor="light.900"
       cursor="pointer"
       display="flex"

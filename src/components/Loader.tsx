@@ -4,6 +4,7 @@ import { Loader as WuiLoader } from "@welcome-ui/loader";
 const Loader = () => {
   return (
     <Box
+      data-cy="loader"
       display="flex"
       alignItems="center"
       justifyContent="center"
