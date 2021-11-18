@@ -8,7 +8,10 @@ import { Tag } from "@welcome-ui/tag";
 
 import useForm from "../hooks/useForm";
 import { useApp } from "../store";
-import { ISearchFormValues } from "../utils/interfaces";
+import {
+  ISearchFormValues,
+  ISearchGroupByAttributeGroup,
+} from "../utils/interfaces";
 
 const initV = { text: "", groupBy: "" };
 
@@ -25,7 +28,10 @@ const SearchBar = () => {
     handleReset();
   };
 
-  const renderGroupHeader = ({ label, options }: any) => (
+  const renderGroupHeader = ({
+    label,
+    options,
+  }: ISearchGroupByAttributeGroup) => (
     <Box p="xs">
       <Box display="flex" alignItems="center" justifyContent="space-between">
         <Text m="0" variant="body3">

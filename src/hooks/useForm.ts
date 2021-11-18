@@ -14,13 +14,16 @@ const useForm = <T>(intialValues: T) => {
    * e => input, textarea
    * args => select
    */
-  const onChange = (e: ChangeEvent<HTMLInputElement>, args: any) => {
+  const onChange = (
+    e: ChangeEvent<HTMLInputElement>,
+    args: ChangeEvent<HTMLSelectElement>
+  ) => {
     if (e.target) {
       const { name, value } = e.target;
       setValues({ ...values, [name]: value });
     } else {
       const { name, value } = args.target;
-      setValues({ ...values, [name]: value.value });
+      setValues({ ...values, [name]: (value as any).value });
     }
   };
 
