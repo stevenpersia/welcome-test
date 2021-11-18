@@ -9,7 +9,7 @@ yarn start
 ```
 
 ## How to run tests
-Be sure you have installed and started project befoore run tests.
+Be sure you have installed and started project before run tests.
 ```bash
 cd welcome-test
 npx cypress open
