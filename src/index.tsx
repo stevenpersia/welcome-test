@@ -1,12 +1,21 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { createTheme, WuiProvider } from "@welcome-ui/core";
+
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { AppProvider } from "./store";
+
+const theme = createTheme({ radii: { sm: 0, md: 0, lg: 0 } });
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <WuiProvider theme={theme}>
+      <AppProvider>
+        <App />
+      </AppProvider>
+    </WuiProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );
