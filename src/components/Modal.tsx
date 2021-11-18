@@ -20,6 +20,7 @@ const Modal = () => {
 
   return (
     <WuiModal
+      data-cy="modal"
       ariaLabel={`job-${job?.id}`}
       closeElement={() => null}
       style={{ height: "100%" }}

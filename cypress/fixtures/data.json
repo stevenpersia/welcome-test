@@ -1,0 +1,131 @@
+{
+  "name": "Welcome to the Jungle",
+  "jobs": [
+    {
+      "id": 1,
+      "reference": "WTTJ_1",
+      "name": "Offer 1",
+      "slug": "offer-1",
+      "description": "Offer 1 description",
+      "published_at": "2021-11-16T09:52:20.467+01:00",
+      "created_at": {
+        "fr": "Le 03 Novembre 2021 à 19h30",
+        "en": "The 03 November 2021 at 19h30"
+      },
+      "start_date": { "fr": "03 Janvier 2022", "en": "03 January 2022" },
+      "office": {
+        "id": 196,
+        "name": "Paris",
+        "address": "16 Rue du Mail",
+        "zip_code": "75002",
+        "district": "Paris",
+        "city": "Paris",
+        "country": { "fr": "France", "en": "France" }
+      },
+      "department": { "id": 31, "name": "Operations" },
+      "contract_type": {
+        "fr": "Stage",
+        "en": "Internship",
+        "es": "Prácticas",
+        "cs": "Stáž",
+        "sk": "Stáž"
+      },
+      "profile": "Offer 1 profile",
+      "recruitment_process": "Offer 1 recruitment process",
+      "salary": {
+        "min": null,
+        "max": null,
+        "currency": "EUR",
+        "period": "none"
+      },
+      "cms_sites_references": ["wttj_fr"],
+      "websites_urls": [
+        {
+          "website_reference": "edtech-france",
+          "url": "https://edtechfrance.fr/"
+        },
+        {
+          "website_reference": "station-f-job-board",
+          "url": "https://jobs.stationf.co/"
+        },
+        {
+          "website_reference": "wttj_fr",
+          "url": "https://www.welcometothejungle.com/"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "reference": "WTTJ_2",
+      "name": "Offer 2",
+      "slug": "offer-2",
+      "description": "Offer 2 description",
+      "published_at": "2021-11-09T08:40:20.467+01:00",
+      "created_at": {
+        "fr": "Le 02 Novembre 2021 à 14h30",
+        "en": "The 02 November 2021 at 14h30"
+      },
+      "start_date": { "fr": "02 Janvier 2022", "en": "02 January 2022" },
+      "office": {
+        "id": 200,
+        "name": "Marseille",
+        "address": "20 rue de la Grâce",
+        "zip_code": "13000",
+        "district": "Marseille",
+        "city": "Marseille",
+        "country": { "fr": "France", "en": "France" }
+      },
+      "department": { "id": 31, "name": "Medias" },
+      "contract_type": {
+        "fr": "Stage",
+        "en": "Internship",
+        "es": "Prácticas",
+        "cs": "Stáž",
+        "sk": "Stáž"
+      },
+      "profile": "Offer 2 profile",
+      "recruitment_process": "Offer 2 recruitment process",
+      "salary": {
+        "min": null,
+        "max": null,
+        "currency": "EUR",
+        "period": "none"
+      },
+      "cms_sites_references": ["wttj_fr"],
+      "websites_urls": [
+        {
+          "website_reference": "edtech-france",
+          "url": "https://edtechfrance.fr/"
+        },
+        {
+          "website_reference": "station-f-job-board",
+          "url": "https://jobs.stationf.co/"
+        },
+        {
+          "website_reference": "wttj_fr",
+          "url": "https://www.welcometothejungle.com/"
+        }
+      ]
+    }
+  ],
+  "websites": [
+    {
+      "reference": "wttj_fr",
+      "kind": "external_wttj",
+      "root_url": "https://www.welcometothejungle.com",
+      "organization_url": "https://www.welcometothejungle.com/companies/wttj"
+    },
+    {
+      "reference": "station-f-job-board",
+      "kind": "multi",
+      "root_url": "https://jobs.stationf.co",
+      "organization_url": "https://jobs.stationf.co/companies/wttj"
+    },
+    {
+      "reference": "edtech-france",
+      "kind": "multi",
+      "root_url": "https://edtech-france.welcomekit.co",
+      "organization_url": "https://edtech-france.welcomekit.co/companies/wttj"
+    }
+  ]
+}
