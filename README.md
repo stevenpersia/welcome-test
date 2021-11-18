@@ -3,8 +3,9 @@ Technical test for Welcome To The Jungle. Demo link in GitHub description.
 
 ## How to install
 ```bash
-yarn
+git clone https://github.com/stevenpersia/welcome-test.git
 cd welcome-test
+yarn
 yarn start
 ```
 
